@@ -1,0 +1,28 @@
+{
+  "name": "lun-phase",
+  "version": "0.0.0",
+  "description": "ask me about lunation",
+  "main": "index.js",
+  "scripts": {
+    "test": "node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/livhaas/lun-phase.git"
+  },
+  "keywords": [
+    "moon",
+    "lunation",
+    "lunar",
+    "phase"
+  ],
+  "author": "olivia haas",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/livhaas/lun-phase/issues"
+  },
+  "homepage": "https://github.com/livhaas/lun-phase",
+  "dependencies": {
+    "node-emoji": "^0.1.0"
+  }
+}
