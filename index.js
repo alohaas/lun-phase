@@ -1,4 +1,6 @@
 var emoji = require('node-emoji');
+var phase = require('./phase');
+
 
 // prep emojis
 var emojis = [
@@ -31,6 +33,11 @@ var names = [
   'Waning Crescent Moon'
 ];
 
+module.exports = function() {
+
+}
+
 module.exports.emojis = emojis;
 module.exports.names = names;
 module.exports.chars = chars;
+module.exports.phase = phase.day;
