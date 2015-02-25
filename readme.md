@@ -1,15 +1,34 @@
 # lun-phase
 
-**still in the works**
-
-One day you may receive:
+You may receive:
 1. A numerical value representing the moon's age in the current lunation
+2. A numerical value representing the moon's phase
 2. An emoji representing the moon's phase
 3. The name of the current phase as a string
-4. A unicode character representing the moon's phase
 
 
-preview to the remix: `node test.js`
+## Usage
+
+```
+  var Lun = require("../index");
+  var lun = new Lun();
+
+  console.log(lun.now());
+```
+will output an object that looks something like this
+
+```
+  {
+    age: 6,
+    phase: 2,
+    emoji: ':first_quarter_moon:',
+    name: 'First Quarter Moon'
+  }
+```
+
+## Notes
+
+We deal in whole numbers because this is a wholly unscientific endeavor.
 
 Thank you Ben Daglish for providing moon phase calculation methods.
 - http://www.ben-daglish.net/moon.shtml
