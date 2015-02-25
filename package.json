@@ -1,6 +1,6 @@
 {
   "name": "lun-phase",
-  "version": "0.0.0",
+  "version": "0.1.1",
   "description": "ask me about lunation",
   "main": "index.js",
   "scripts": {

@@ -10,12 +10,13 @@ You may receive:
 ## Usage
 
 ```
-  var Lun = require("../index");
+  var Lun = require("lun-phase");
   var lun = new Lun();
 
   console.log(lun.now());
 ```
-will output an object that looks something like this
+will return an object that looks something like this
+Your values will likely be different based on what day it is.
 
 ```
   {
