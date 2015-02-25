@@ -3,8 +3,8 @@
 You may receive:
 1. A numerical value representing the moon's age in the current lunation
 2. A numerical value representing the moon's phase
-2. An emoji representing the moon's phase
-3. The name of the current phase as a string
+3. An emoji representing the moon's phase
+4. The name of the current phase as a string
 
 
 ## Usage

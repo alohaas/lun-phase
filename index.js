@@ -1,15 +1,15 @@
 var emojis = require('./lib/emojis');
 var names = require('./lib/names');
-var today = require('./lib/phase').today;
+var age = require('./lib/age').today;
 
 function Lun(options) {
 
-  this.age = today,
+  this.age = age,
   this.emojis = emojis,
   this.names = names,
 
   this.whichPhase = function() {
-		if (this.age < 1 )                 { return 0 }
+		if (this.age < 1 )                    { return 0 }
 		if (this.age >= 1 && this.age < 5)    { return 1 }
 		if (this.age >= 5 && this.age < 9)    { return 2 }
 		if (this.age >= 9 && this.age < 13)   { return 3 }
