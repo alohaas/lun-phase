@@ -1,43 +1,36 @@
-var emoji = require('node-emoji');
-var phase = require('./phase');
+var emojis = require('./lib/emojis');
+var names = require('./lib/names');
+var today = require('./lib/phase').today;
 
+function Lun(options) {
 
-// prep emojis
-var emojis = [
-  emoji.get('new_moon'),
-  emoji.get('waxing_crescent_moon'),
-  emoji.get('first_quarter_moon'),
-  emoji.get('moon'),
-  emoji.get('full_moon'),
-  emoji.get('last_quarter_moon'),
-  emoji.get('waning_gibbous_moon'),
-  emoji.get('waning_crescent_moon')
-];
+  this.age = today,
+  this.emojis = emojis,
+  this.names = names,
 
-// prep unicode
-var chars = [
-  '\u25CF',
-  '\u263D',
-  '\u263E'
-];
+  this.whichPhase = function() {
+		if (this.age < 1 )                 { return 0 }
+		if (this.age >= 1 && this.age < 5)    { return 1 }
+		if (this.age >= 5 && this.age < 9)    { return 2 }
+		if (this.age >= 9 && this.age < 13)   { return 3 }
+		if (this.age >= 13 && this.age < 16)  { return 4 }
+  	if (this.age >= 16 && this.age < 20)  { return 5 }
+		if (this.age >= 20 && this.age < 22)  { return 6 }
+		if (this.age >= 22 && this.age < 25)  { return 7 }
+		if (this.age >= 25 && this.age < 29)  { return 8 }
+		if (this.age >= 29 && this.age < 30)  { return 0 }
+  },
 
-// prep names
-var names = [
-  'New Moon',
-  'Waxing Crescent Moon',
-  'First Quarter Moon',
-  'Waxing Gibbous Moon',
-  'Full Moon',
-  'Last Quarter Moon',
-  'Waning Gibbous Moon',
-  'Waning Crescent Moon'
-];
+  this.now = function() {
+    var phase = this.whichPhase();
 
-module.exports = function() {
-
+    return {
+      age: this.age,
+      phase: phase,
+      emoji: this.emojis[phase],
+      name: this.names[phase]
+    }
+  }
 }
 
-module.exports.emojis = emojis;
-module.exports.names = names;
-module.exports.chars = chars;
-module.exports.phase = phase.day;
+module.exports = Lun;
